@@ -18,10 +18,10 @@ if (toolsEl) {
 
 // 1b. More AI agents & automation — compact cards
 const moreAI = [
-  { name: 'Olive-AI', desc: 'AI agent experiment', lang: 'Python' },
+  { name: 'Olive-AI', desc: 'AI agent experiment', lang: 'Python', demo: 'YOUR_VIDEO_ID' },
   { name: 'Tender', desc: 'AI tender assistant', lang: 'TypeScript', priv: true },
   { name: 'askisiv1', desc: 'AI assistant / chatbot', lang: 'TypeScript' },
-  { name: 'Hand-Recognition-Software', desc: 'Recognizes hand gestures', lang: 'Python' },
+  { name: 'Hand-Recognition-Software', desc: 'Recognizes hand gestures', lang: 'Python', demo: 'YOUR_VIDEO_ID' },
   { name: 'Corner', desc: 'Betting corner-prediction bot', lang: 'Python', priv: true },
 ];
 
@@ -32,46 +32,31 @@ if (miniEl) {
       const link = p.priv
         ? '<span class="mini-link muted">private</span>'
         : `<a class="mini-link" href="https://github.com/ryanreo/${p.name}" target="_blank" rel="noopener">&lt;repo /&gt;</a>`;
+      const demo = p.demo
+        ? `<a class="mini-link btn-demo" href="https://youtube.com/watch?v=${p.demo}" target="_blank" rel="noopener">▶ demo</a>`
+        : '';
       return (
         `<div class="mini-card"><div class="mini-head mono"><span class="mini-name">${p.name}</span>` +
         (p.priv ? '<span class="priv-badge">private</span>' : '') +
-        `</div><p class="mini-desc">${p.desc}</p><div class="mini-foot mono"><span>${p.lang}</span>${link}</div></div>`
+        `</div><p class="mini-desc">${p.desc}</p><div class="mini-foot mono"><span>${p.lang}</span>${demo}${link}</div></div>`
       );
     })
     .join('');
 }
 
-// 1c. My other work — everything outside AI agents & workflows
+// 1c. My other work — the cool projects (trading bots, health, tools), no websites
 const otherWork = [
-  { name: 'Currency-Converterr', desc: 'Currency converter with real-time exchange rates', lang: 'HTML' },
-  { name: 'E-commerce-Website-M-Pesa-Intergrated', desc: 'E-commerce site with M-Pesa integration', lang: 'TypeScript' },
+  { name: 'LTS-Adjuster-MT4-MT5', desc: 'MT4/MT5 trading indicator — adjusts lot sizes to risk', lang: 'MQL5' },
+  { name: 'ICT-SMC-Trade-assistant', desc: 'SMC (Smart Money Concepts) trading assistant', lang: 'Python' },
   { name: 'Nayr-Healthcare', desc: 'Healthcare platform — semester project', lang: 'JavaScript' },
-  { name: 'kijanicafe', desc: 'Café website', lang: 'HTML' },
-  { name: 'Tribal-Animations', desc: 'Web animation experiments', lang: 'HTML' },
-  { name: 'LTS-Adjuster-MT4-MT5', desc: 'MT4/MT5 trading indicator', lang: 'MQL5' },
-  { name: 'ICT-SMC-Trade-assistant', desc: 'SMC trading assistant', lang: 'Python' },
+  { name: 'Vitalink', desc: 'Health / vital-signs project', lang: 'Python' },
+  { name: 'Currency-Converterr', desc: 'Currency converter with real-time exchange rates', lang: 'HTML' },
   { name: 'S-D', desc: '', lang: 'Python' },
   { name: 'Nobody', desc: '', lang: 'Python' },
-  { name: 'Vitalink', desc: '', lang: 'Python' },
   { name: 'whatswrong', desc: '', lang: 'Python' },
   { name: 'Bera', desc: '', lang: 'TypeScript' },
-  { name: 'valentines', desc: 'Valentine’s project', lang: 'TypeScript' },
-  { name: 'Astrid', desc: 'Personal portfolio', lang: 'HTML', priv: true },
-  { name: 'Astrid-Photography-', desc: 'Photography site', lang: 'JavaScript', priv: true },
-  { name: 'Kenyagamers', desc: 'Gaming community site', lang: 'TypeScript', priv: true },
-  { name: 'NairobiRaha', desc: '', lang: 'JavaScript', priv: true },
-  { name: 'Nacity', desc: '', lang: 'HTML', priv: true },
-  { name: 'Landmark', desc: '', lang: 'HTML', priv: true },
-  { name: 'Elizaphan-Plaza', desc: '', lang: 'HTML', priv: true },
-  { name: 'Fika', desc: '', lang: 'HTML', priv: true },
-  { name: 'Assignment', desc: '', lang: 'CSS', priv: true },
-  { name: 'Supermarkety', desc: 'Supermarket site', lang: 'JavaScript', priv: true },
-  { name: 'C2C', desc: '', lang: 'HTML', priv: true },
-  { name: 'TuleKienyeji', desc: '', lang: 'HTML', priv: true },
   { name: 'ClearVoice', desc: '', lang: 'TypeScript', priv: true },
-  { name: 'Gold-Mine', desc: '', lang: 'HTML', priv: true },
   { name: 'vidstar', desc: '', lang: 'Python', priv: true },
-  { name: 'rj-cars', desc: 'Car website', lang: 'Python', priv: true },
 ];
 
 const otherEl = document.getElementById('other-work');
