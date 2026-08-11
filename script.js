@@ -16,6 +16,80 @@ if (toolsEl) {
     .join('');
 }
 
+// 1b. More AI agents & automation — compact cards
+const moreAI = [
+  { name: 'Olive-AI', desc: 'AI agent experiment', lang: 'Python' },
+  { name: 'Tender', desc: 'AI tender assistant', lang: 'TypeScript', priv: true },
+  { name: 'askisiv1', desc: 'AI assistant / chatbot', lang: 'TypeScript' },
+  { name: 'Hand-Recognition-Software', desc: 'Recognizes hand gestures', lang: 'Python' },
+  { name: 'Corner', desc: 'Betting corner-prediction bot', lang: 'Python', priv: true },
+];
+
+const miniEl = document.getElementById('mini-ai');
+if (miniEl) {
+  miniEl.innerHTML = moreAI
+    .map((p) => {
+      const link = p.priv
+        ? '<span class="mini-link muted">private</span>'
+        : `<a class="mini-link" href="https://github.com/ryanreo/${p.name}" target="_blank" rel="noopener">&lt;repo /&gt;</a>`;
+      return (
+        `<div class="mini-card"><div class="mini-head mono"><span class="mini-name">${p.name}</span>` +
+        (p.priv ? '<span class="priv-badge">private</span>' : '') +
+        `</div><p class="mini-desc">${p.desc}</p><div class="mini-foot mono"><span>${p.lang}</span>${link}</div></div>`
+      );
+    })
+    .join('');
+}
+
+// 1c. My other work — everything outside AI agents & workflows
+const otherWork = [
+  { name: 'Currency-Converterr', desc: 'Currency converter with real-time exchange rates', lang: 'HTML' },
+  { name: 'E-commerce-Website-M-Pesa-Intergrated', desc: 'E-commerce site with M-Pesa integration', lang: 'TypeScript' },
+  { name: 'Nayr-Healthcare', desc: 'Healthcare platform — semester project', lang: 'JavaScript' },
+  { name: 'kijanicafe', desc: 'Café website', lang: 'HTML' },
+  { name: 'Tribal-Animations', desc: 'Web animation experiments', lang: 'HTML' },
+  { name: 'LTS-Adjuster-MT4-MT5', desc: 'MT4/MT5 trading indicator', lang: 'MQL5' },
+  { name: 'ICT-SMC-Trade-assistant', desc: 'SMC trading assistant', lang: 'Python' },
+  { name: 'S-D', desc: '', lang: 'Python' },
+  { name: 'Nobody', desc: '', lang: 'Python' },
+  { name: 'Vitalink', desc: '', lang: 'Python' },
+  { name: 'whatswrong', desc: '', lang: 'Python' },
+  { name: 'Bera', desc: '', lang: 'TypeScript' },
+  { name: 'valentines', desc: 'Valentine’s project', lang: 'TypeScript' },
+  { name: 'Astrid', desc: 'Personal portfolio', lang: 'HTML', priv: true },
+  { name: 'Astrid-Photography-', desc: 'Photography site', lang: 'JavaScript', priv: true },
+  { name: 'Kenyagamers', desc: 'Gaming community site', lang: 'TypeScript', priv: true },
+  { name: 'NairobiRaha', desc: '', lang: 'JavaScript', priv: true },
+  { name: 'Nacity', desc: '', lang: 'HTML', priv: true },
+  { name: 'Landmark', desc: '', lang: 'HTML', priv: true },
+  { name: 'Elizaphan-Plaza', desc: '', lang: 'HTML', priv: true },
+  { name: 'Fika', desc: '', lang: 'HTML', priv: true },
+  { name: 'Assignment', desc: '', lang: 'CSS', priv: true },
+  { name: 'Supermarkety', desc: 'Supermarket site', lang: 'JavaScript', priv: true },
+  { name: 'C2C', desc: '', lang: 'HTML', priv: true },
+  { name: 'TuleKienyeji', desc: '', lang: 'HTML', priv: true },
+  { name: 'ClearVoice', desc: '', lang: 'TypeScript', priv: true },
+  { name: 'Gold-Mine', desc: '', lang: 'HTML', priv: true },
+  { name: 'vidstar', desc: '', lang: 'Python', priv: true },
+  { name: 'rj-cars', desc: 'Car website', lang: 'Python', priv: true },
+];
+
+const otherEl = document.getElementById('other-work');
+if (otherEl) {
+  otherEl.innerHTML = otherWork
+    .map((p) => {
+      const attrs = p.priv
+        ? ''
+        : ` href="https://github.com/ryanreo/${p.name}" target="_blank" rel="noopener"`;
+      return (
+        `<a class="other-card"${attrs}><div class="other-head mono"><span class="other-name">${p.name}</span>` +
+        (p.priv ? '<span class="priv-badge">private</span>' : `<span class="lang-badge">${p.lang}</span>`) +
+        `</div><p class="other-desc">${p.desc || '—'}</p></a>`
+      );
+    })
+    .join('');
+}
+
 // 2. Typing effect in the terminal
 const phrases = [
   'status: open_to_internships()',
@@ -53,7 +127,7 @@ const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // 4. Scroll reveal
-const revealEls = document.querySelectorAll('.card, .tool, .stat, .contact-card');
+const revealEls = document.querySelectorAll('.card, .tool, .stat, .contact-card, .mini-card, .other-card');
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver(
     (entries) => {
