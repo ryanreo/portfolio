@@ -2,7 +2,7 @@
 
 // 1. Toolbox: GitHub-style code tags
 const tools = [
-  'zapier', 'zap', 'gumloop', 'n8n', 'make', 'supabase',
+  'zapier', 'zap', 'gumloop', 'n8n', 'make', 'openclaw', 'supabase',
   'node.js', 'python', 'whatsapp-api', 'mpesa-daraja', 'gmail-api',
   'sheets-api', 'telegram-api', 'ussd', 'git', 'github-pages',
 ];
