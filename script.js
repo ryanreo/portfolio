@@ -3,8 +3,10 @@
 // 1. Toolbox: GitHub-style code tags
 const tools = [
   'zapier', 'zap', 'gumloop', 'n8n', 'make', 'openclaw', 'supabase',
-  'node.js', 'python', 'whatsapp-api', 'mpesa-daraja', 'gmail-api',
-  'sheets-api', 'telegram-api', 'ussd', 'git', 'github-pages',
+  'node.js', 'python', 'react', 'vite', 'typescript', 'fastapi',
+  'langchain', 'langgraph', 'deepseek-v4', 'sqlite', 'whatsapp-api',
+  'mpesa-daraja', 'gmail-api', 'sheets-api', 'telegram-api', 'ussd',
+  'git', 'github-pages',
 ];
 
 const toolsEl = document.getElementById('tools');
