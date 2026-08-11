@@ -18,10 +18,10 @@ if (toolsEl) {
 
 // 1b. More AI agents & automation — compact cards
 const moreAI = [
-  { name: 'Olive-AI', desc: 'AI agent experiment', lang: 'Python', demo: 'YOUR_VIDEO_ID' },
+  { name: 'Olive-AI', desc: 'AI agent experiment', lang: 'Python' },
   { name: 'Tender', desc: 'AI tender assistant', lang: 'TypeScript', priv: true },
   { name: 'askisiv1', desc: 'AI assistant / chatbot', lang: 'TypeScript' },
-  { name: 'Hand-Recognition-Software', desc: 'Recognizes hand gestures', lang: 'Python', demo: 'YOUR_VIDEO_ID' },
+  { name: 'Hand-Recognition-Software', desc: 'Recognizes hand gestures', lang: 'Python' },
   { name: 'Corner', desc: 'Betting corner-prediction bot', lang: 'Python', priv: true },
 ];
 
@@ -32,13 +32,10 @@ if (miniEl) {
       const link = p.priv
         ? '<span class="mini-link muted">private</span>'
         : `<a class="mini-link" href="https://github.com/ryanreo/${p.name}" target="_blank" rel="noopener">&lt;repo /&gt;</a>`;
-      const demo = p.demo
-        ? `<a class="mini-link btn-demo" href="https://youtube.com/watch?v=${p.demo}" target="_blank" rel="noopener">▶ demo</a>`
-        : '';
       return (
         `<div class="mini-card"><div class="mini-head mono"><span class="mini-name">${p.name}</span>` +
         (p.priv ? '<span class="priv-badge">private</span>' : '') +
-        `</div><p class="mini-desc">${p.desc}</p><div class="mini-foot mono"><span>${p.lang}</span>${demo}${link}</div></div>`
+        `</div><p class="mini-desc">${p.desc}</p><div class="mini-foot mono"><span>${p.lang}</span>${link}</div></div>`
       );
     })
     .join('');
