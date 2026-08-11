@@ -2,7 +2,7 @@
 
 // 1. Toolbox: GitHub-style code tags
 const tools = [
-  'n8n', 'openclaw', 'deepseek', 'glm-5.2', 'supabase', 'mysql',
+  'zapier', 'zap', 'gumloop', 'n8n', 'make', 'supabase',
   'node.js', 'python', 'whatsapp-api', 'mpesa-daraja', 'gmail-api',
   'sheets-api', 'telegram-api', 'ussd', 'git', 'github-pages',
 ];
